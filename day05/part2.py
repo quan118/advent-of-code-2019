@@ -41,7 +41,8 @@ if __name__=="__main__":
       program[program[counter+1]] = SYSTEM_ID
       counter += 2
     elif opcode == OUTPUT:
-      print("output: %d" % (program[program[counter+1]]))
+      val1 = get_value(program, counter+1, int(instruction[2]))
+      print("output: %d" % (val1))
       counter += 2
     elif opcode == JUMP_IF_TRUE:
       val1 = get_value(program, counter+1, int(instruction[2]))

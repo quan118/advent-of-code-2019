@@ -42,7 +42,8 @@ def execute(mem, mem_idx, inputs):
       mem_idx += 2
       input_idx += 1
     elif opcode == OUTPUT:
-      output.append(mem[mem[mem_idx+1]])
+      val1 = get_value(mem, mem_idx+1, int(instruction[2]))
+      output.append(val1)
       mem_idx += 2
     elif opcode == JUMP_IF_TRUE:
       val1 = get_value(mem, mem_idx+1, int(instruction[2]))

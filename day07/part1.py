@@ -44,7 +44,7 @@ def execute(program, inputs):
       counter += 2
       input_counter += 1
     elif opcode == OUTPUT:
-      output = program[program[counter+1]]
+      output = get_value(program, counter+1, int(instruction[2]))
       # print("output: %d" % (output))
       counter += 2
     elif opcode == JUMP_IF_TRUE:
